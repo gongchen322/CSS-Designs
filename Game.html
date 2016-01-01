@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blur Menu with CSS3 Transitions</title>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css' />
+    </head>
+    <style>
+ 		.square{
+ 			position: relative;
+		    width: 8.5%;
+		    height: 8.5%;
+		    margin: 0.75%;
+		    background-color: red;
+		    float: left;
+	 	}
+		   
+    	#container{
+    		position:relative;
+    		border: 3px solid green;
+    		margin: 30px auto ;
+    		width:700px;
+	  	}
+    	.text{
+    		position:relative;
+		    width:580px;
+		    text-align:center;
+		    margin: 30px auto ;
+    	}
+		.board{
+			position:relative;
+	    	text-align:center;
+	    	margin: 30px auto ;
+	    	width: 500px;
+	    	height: 500px;
+	    	border: 3px solid red;
+		}
+	</style>
+    <body >
+        <div class="container">
+        	<div class="text">
+        		<strong> Happy Birthday! and Welcome to play this game <strong>
+        		<div id="counter">
+        		</div>	
+        	</div>
+        	<div class="board">
+
+        	</div>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script>
+    	var squareSize=10;
+    	var index=0;
+    	var colorSet=["#01E038","#F602FA","#0271F8","#07F5A9","#DCF501","#7A851C","#F11755","#BF94A0","#24DDD4","#F0AA11"];
+    	var colorSetDif=["#02FA40","#A905AF","#1551B2","#05E29C","#D5ED01","#148A1B","#C40985","#725C6B","#17C1D0","#F7C24F"];
+    	var count = 10;
+    	var timer = setInterval(function() {
+		    $("#counter").html(count--);
+		    if(count == 0){
+		    	clearInterval(timer);
+		    	$('.board').empty();
+		    	alert("gg");
+		    }
+		}, 1000);
+    	var createSquare = function createSquare(index){
+    		count=10;
+    		if(index==10)
+    		{
+    			$('.board').empty();
+    			$('.board').append("<strong style='font-size: 40px'> Looking for the prize.</strong><br><strong> Living under Moonlight Sonata</strong>");
+    			return;
+    		}
+    		$('.board').empty();
+	    	var randomI = Math.floor(Math.random() * squareSize);
+	    	var randomJ = Math.floor(Math.random() * squareSize);
+	    	console.log(randomI+ " "+randomJ);
+	    	for(var i=0;i<squareSize;i++){
+	    		for(var j=0;j<squareSize;j++){
+	    			if(i==randomI && j==randomJ)
+	    				$(".board").append("<div class='square correct' style='background-color:"+ colorSetDif[index]+";'></div>" );
+	    			else
+	    				$(".board").append("<div class='square wrong' style='background-color:"+ colorSet[index]+";'></div>" );
+	    		}
+	    		//$(".board").append("<br>");
+	    	}
+	    	$('.correct').on('click',function(){
+  			createSquare(index+1);
+		});
+	    }
+	    createSquare(index);
+	   
+    	
+    </script>
+</html>

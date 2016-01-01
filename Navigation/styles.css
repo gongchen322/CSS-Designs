@@ -1,0 +1,122 @@
+body{
+	background: url('img/aa.jpg') no-repeat;
+	font-size:14px;
+	color:#666;
+	
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+h1{
+	color:#fff;
+	font-size:30px;
+	font-weight:normal;
+	padding:60px 0 20px;
+	text-align:center;
+}
+
+#Container li{
+	width: 104px;
+	height: 104px;
+	list-style: none;
+	padding-top: 5px;
+
+}
+
+#Container span{
+	width: 0;
+	left:104px;
+	padding:0;
+	position:absolute;
+	overflow:hidden;
+
+	font-family:'Myriad Pro',Arial, Helvetica, sans-serif;
+	font-size:30px;
+	font-weight:bold;
+	letter-spacing:0.6px;
+	white-space:nowrap;
+	line-height:104px;
+
+	transition: 0.25s;
+}
+
+/*Home Button*/
+
+#Menu a.home{
+	background:url('img/Home.png') no-repeat;
+	width:104px;
+	height:104px;
+	display:block;
+	position:relative;
+	
+}
+
+#Menu .home span{
+	background-color:#c86c1f;
+	color:#5a3517;
+	text-shadow:1px 1px 0 #d28344;
+}
+
+/*Game Button*/
+
+#Menu a.game{
+	background:url('img/Game.png');
+	width:104px;
+	height:104px;
+	display:block;
+	position:relative;
+
+}
+
+#Menu .game span{
+	background-color:#c70000;
+	color:#303030;
+	text-shadow:1px 1px 0 #d28344;
+}
+
+/*Project Button*/
+
+#Menu a.project{
+	background:url('img/Project.png');
+	width:104px;
+	height:104px;
+	display:block;
+	position:relative;
+
+}
+
+#Menu .project span{
+	background-color:#33ffe7;
+	color:#303030;
+	text-shadow:1px 1px 0 #d28344;
+}
+/*Contact Button*/
+#Menu a.contact{
+	background:url('img/Contact.png');
+	width:104px;
+	height:104px;
+	display:block;
+	position:relative;
+}
+
+#Menu .contact span{
+	background-color:#008f00;
+	color:#303030;
+	text-shadow:1px 1px 0 #d28344;
+}
+
+#Menu a:hover span{ width:auto; height: auto; padding:0 100px;overflow:visible; }
+#Menu a:hover{
+	text-decoration:none;
+	
+	/* CSS outer glow with the box-shadow property */
+	-moz-box-shadow:0 0 5px #9ddff5;
+	-webkit-box-shadow:0 0 5px #9ddff5;
+	box-shadow:0 0 5px #9ddff5;
+}
+
+#Container{
+	margin:80px auto;
+	position:static;
+	width:104px;
+	
+}
